@@ -13,8 +13,8 @@ export const about = {
   title: "About Team Blitzer CUET",
   description:
     "Team Blitzer CUET is CUET's student-led racing team competing in go-kart and formula events. We blend engineering rigor with track-tested innovation across chassis, powertrain, aero, and telemetry to push performance and mentorship on and off the circuit.",
-  // Use the Google Drive embed/preview link for direct playback
-  videoUrl: "https://drive.google.com/file/d/181UpwRr_8EdNopoHzrrVafecggKfL43I/preview",
+  // Use the Vercel-hosted video
+  videoUrl: "https://teamblitzer.vercel.app/about-video.mp4",
 };
 export type Achievement = {
   id: string;
