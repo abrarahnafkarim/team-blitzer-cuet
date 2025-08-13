@@ -85,7 +85,7 @@ export const About: React.FC = () => {
           <div className="aspect-video w-full bg-muted">
             <video
               ref={videoRef}
-              src="/about-video.mp4"
+              src={about.videoUrl}
               className="h-full w-full object-cover cursor-pointer"
               preload="auto"
               playsInline
