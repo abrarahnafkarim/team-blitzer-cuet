@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Premium Purple Brand */
+    --background: 0 0% 100%;
+    --foreground: 235 19% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 235 19% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 235 19% 15%;
+
+    /* Brand tokens */
+    --brand: 268 85% 52%;            /* Royal purple */
+    --brand-glow: 282 88% 60%;       /* Electric violet */
+
+    --primary: var(--brand);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 255 15% 95%;
+    --secondary-foreground: 235 19% 15%;
+
+    --muted: 255 15% 96%;
+    --muted-foreground: 235 8% 45%;
+
+    --accent: 265 90% 96%;
+    --accent-foreground: 268 85% 32%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 255 15% 90%;
+    --input: 255 15% 90%;
+    --ring: var(--brand);
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: var(--brand);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Gradients & shadows */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--brand)), hsl(var(--brand-glow)));
+    --gradient-hero: radial-gradient(600px 300px at var(--mouse-x, 50%) var(--mouse-y, 40%), hsl(var(--brand-glow) / 0.25), transparent 60%);
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--brand) / 0.35);
+    --shadow-glow: 0 0 40px hsl(var(--brand-glow) / 0.35);
+  }
+
+  .dark {
+    --background: 240 10% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 98%;
+
+    --brand: 268 85% 60%;
+    --brand-glow: 282 88% 66%;
+
+    --primary: var(--brand);
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 7% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 7% 18%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 264 70% 18%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 7% 18%;
+    --input: 240 7% 18%;
+    --ring: var(--brand);
+
+    --sidebar-background: 240 6% 10%;
+    --sidebar-foreground: 240 5% 96%;
+    --sidebar-primary: var(--brand);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 6% 14%;
+    --sidebar-accent-foreground: 240 5% 96%;
+    --sidebar-border: 240 6% 14%;
+    --sidebar-ring: var(--brand);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    min-height: 100vh;
+    min-width: 100vw;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+  /* Ensure hero image always fits and covers the hero section on all devices */
+  #hero .bg-cover {
+    object-fit: cover !important;
+    object-position: center !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100svh !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    display: block;
+  }
+}
+
+/* Utilities */
+@layer utilities {
+  .bg-gradient-primary {
+    background-image: var(--gradient-primary);
+  }
+  .glass-surface {
+    backdrop-filter: saturate(140%) blur(8px);
+    background-color: hsl(var(--card) / 0.6);
+    box-shadow: var(--shadow-elegant);
+  }
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+  .story-link {
+    position: relative;
+  }
+  .story-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    background: hsl(var(--primary));
+    transition: transform 300ms ease;
+  }
+  .story-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
