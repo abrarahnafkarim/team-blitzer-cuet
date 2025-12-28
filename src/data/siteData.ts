@@ -49,7 +49,7 @@ export const achievements: Achievement[] = [
   { id: "a4", year: 2021, event: "Innovation Award", position: "Winner", description: "Lightweight composite innovations.", image: g1 },
 ];
 
-export type GalleryItem = { id: string; src: string; alt: string; tag: "Track" | "Build" | "Team" };
+export type GalleryItem = { id: string; src: string; alt: string; tag: "Track" | "Build" | "Team" | "Promotion" };
 export const gallery: GalleryItem[] = [
   { id: "p1", src: p1, alt: "Mechanical Workshop", tag: "Build" },
   { id: "p2", src: p2, alt: "24 batch hands on training", tag: "Team" },
@@ -62,11 +62,11 @@ export const gallery: GalleryItem[] = [
   { id: "p9", src: p9, alt: "workshop training session", tag: "Team" },
   { id: "p10", src: p10, alt: "Workshop training session", tag: "Team" },
   { id: "p11", src: p11, alt: "Engine disassembling ", tag: "Build" },
-  { id: "p12", src: p12, alt: "Recruitment promo shot", tag: "Team" },
-  { id: "p13", src: p13, alt: "23 batch recruitment poster", tag: "Build" },
+  { id: "p12", src: p12, alt: "Recruitment promo shot", tag: "Promotion" },
+  { id: "p13", src: p13, alt: "23 batch recruitment poster", tag: "Promotion" },
   { id: "p14", src: p14, alt: "After successful test of kart", tag: "Team" },
   { id: "p15", src: p15, alt: "Team with kart", tag: "Team" },
-  { id: "p16", src: p16, alt: "Logo", tag: "Team" },
+  { id: "p16", src: p16, alt: "Logo", tag: "Promotion" },
 ];
 
 export type TimelineItem = { id: string; year: number; title: string; description: string };
