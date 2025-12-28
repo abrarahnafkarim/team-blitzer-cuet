@@ -2,22 +2,23 @@ import heroImage from "@/assets/hero-race-purple.jpg";
 import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
 import g3 from "@/assets/gallery-3.jpg";
-import p1 from "@/assets/P1.jpg";
-import p2 from "@/assets/P2.jpg";
-import p3 from "@/assets/P3.jpg";
-import p4 from "@/assets/P4.jpg";
-import p5 from "@/assets/P5.jpg";
-import p6 from "@/assets/P6.jpg";
-import p7 from "@/assets/P7.jpg";
-import p8 from "@/assets/P8.jpg";
-import p9 from "@/assets/P9.jpg";
-import p10 from "@/assets/P10.jpg";
-import p11 from "@/assets/P11.jpg";
-import p12 from "@/assets/P12.jpg";
-import p13 from "@/assets/P13.jpg";
-import p14 from "@/assets/P14.jpg";
-import p15 from "@/assets/P15.jpg";
-import p16 from "@/assets/P16.jpg";
+import p1 from "@/assets/p1.jpg";
+import p2 from "@/assets/p2.jpg";
+import p3 from "@/assets/p3.jpg";
+import p4 from "@/assets/p4.jpg";
+import p5 from "@/assets/p5.jpg";
+import p6 from "@/assets/p6.jpg";
+import p7 from "@/assets/p7.jpg";
+import p8 from "@/assets/p8.jpg";
+import p9 from "@/assets/p9.jpg";
+import p10 from "@/assets/p10.jpg";
+import p11 from "@/assets/p11.jpg";
+import p12 from "@/assets/p12.jpg";
+import p13 from "@/assets/p13.jpg";
+import p14 from "@/assets/p14.jpg";
+import p15 from "@/assets/p15.jpg";
+import p16 from "@/assets/p16.jpg";
+
 export const siteInfo = {
   name: "Team Blitzer CUET",
   tagline: "Engineering speed with precision and passion",
