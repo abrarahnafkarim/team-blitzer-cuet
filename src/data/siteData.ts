@@ -51,22 +51,22 @@ export const achievements: Achievement[] = [
 
 export type GalleryItem = { id: string; src: string; alt: string; tag: "Track" | "Build" | "Team" };
 export const gallery: GalleryItem[] = [
-  { id: "p1", src: p1, alt: "IUT Automech 2025 TurboCAD", tag: "Team" },
-  { id: "p2", src: p2, alt: "IUT Automech 2025 Engine Blueprint", tag: "Team" },
-  { id: "p3", src: p3, alt: "𝐈𝐂𝐌𝐄𝐑𝐄 𝟐𝟎𝟐𝟓, 𝐂𝐔𝐄𝐓", tag: "Team" },
-  { id: "p4", src: p4, alt: "IUT Automech 2025 TurboCAD", tag: "Team" },
-  { id: "p5", src: p5, alt: "IUT Automech 2025 Engine Blueprint", tag: "Team" },
-  { id: "p6", src: p6, alt: "𝐈𝐂𝐌𝐄𝐑𝐄 𝟐𝟎𝟐𝟓, 𝐂𝐔𝐄𝐓", tag: "Team" },
-  { id: "p7", src: p7, alt: "IUT Automech 2025 TurboCAD", tag: "Team" },
-  { id: "p8", src: p8, alt: "IUT Automech 2025 Engine Blueprint", tag: "Team" },
-  { id: "p9", src: p9, alt: "𝐈𝐂𝐌𝐄𝐑𝐄 𝟐𝟎𝟐𝟓, 𝐂𝐔𝐄𝐓", tag: "Team" },
-  { id: "p10", src: p10, alt: "IUT Automech 2025 TurboCAD", tag: "Team" },
-  { id: "p11", src: p11, alt: "IUT Automech 2025 Engine Blueprint", tag: "Team" },
-  { id: "p12", src: p12, alt: "𝐈𝐂𝐌𝐄𝐑𝐄 𝟐𝟎𝟐𝟓, 𝐂𝐔𝐄𝐓", tag: "Team" },
-  { id: "p13", src: p13, alt: "IUT Automech 2025 TurboCAD", tag: "Team" },
-  { id: "p14", src: p14, alt: "IUT Automech 2025 Engine Blueprint", tag: "Team" },
-  { id: "p15", src: p15, alt: "𝐈𝐂𝐌𝐄𝐑𝐄 𝟐𝟎𝟐𝟓, 𝐂𝐔𝐄𝐓", tag: "Team" },
-  { id: "p16", src: p16, alt: "IUT Automech 2025 TurboCAD", tag: "Team" },
+  { id: "p1", src: p1, alt: "Mechanical Workshop", tag: "Build" },
+  { id: "p2", src: p2, alt: "24 batch hands on training", tag: "Team" },
+  { id: "p3", src: p3, alt: "Promo video shot", tag: "Team" },
+  { id: "p4", src: p4, alt: "Session with Honourable Advisor", tag: "Build" },
+  { id: "p5", src: p5, alt: "Engine testing", tag: "Build" },
+  { id: "p6", src: p6, alt: "Grinding", tag: "Build" },
+  { id: "p7", src: p7, alt: "CAD Design Team", tag: "Build" },
+  { id: "p8", src: p8, alt: "Body welding", tag: "Build" },
+  { id: "p9", src: p9, alt: "workshop training session", tag: "Team" },
+  { id: "p10", src: p10, alt: "Workshop training session", tag: "Team" },
+  { id: "p11", src: p11, alt: "Engine disassembling ", tag: "Build" },
+  { id: "p12", src: p12, alt: "Recruitment promo shot", tag: "Team" },
+  { id: "p13", src: p13, alt: "23 batch recruitment poster", tag: "Build" },
+  { id: "p14", src: p14, alt: "After successful test of kart", tag: "Team" },
+  { id: "p15", src: p15, alt: "Team with kart", tag: "Team" },
+  { id: "p16", src: p16, alt: "Logo", tag: "Team" },
 ];
 
 export type TimelineItem = { id: string; year: number; title: string; description: string };
