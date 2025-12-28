@@ -2,7 +2,22 @@ import heroImage from "@/assets/hero-race-purple.jpg";
 import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
 import g3 from "@/assets/gallery-3.jpg";
-
+import p1 from "@/assets/P1.jpg";
+import p2 from "@/assets/P2.jpg";
+import p3 from "@/assets/P3.jpg";
+import p4 from "@/assets/P4.jpg";
+import p5 from "@/assets/P5.jpg";
+import p6 from "@/assets/P6.jpg";
+import p7 from "@/assets/P7.jpg";
+import p8 from "@/assets/P8.jpg";
+import p9 from "@/assets/P9.jpg";
+import p10 from "@/assets/P10.jpg";
+import p11 from "@/assets/P11.jpg";
+import p12 from "@/assets/P12.jpg";
+import p13 from "@/assets/P13.jpg";
+import p14 from "@/assets/P14.jpg";
+import p15 from "@/assets/P15.jpg";
+import p16 from "@/assets/P16.jpg";
 export const siteInfo = {
   name: "Team Blitzer CUET",
   tagline: "Engineering speed with precision and passion",
@@ -35,9 +50,22 @@ export const achievements: Achievement[] = [
 
 export type GalleryItem = { id: string; src: string; alt: string; tag: "Track" | "Build" | "Team" };
 export const gallery: GalleryItem[] = [
-  { id: "g1", src: g1, alt: "IUT Automech 2025 TurboCAD", tag: "Team" },
-  { id: "g2", src: g2, alt: "IUT Automech 2025 Engine Blueprint", tag: "Team" },
-  { id: "g3", src: g3, alt: "𝐈𝐂𝐌𝐄𝐑𝐄 𝟐𝟎𝟐𝟓, 𝐂𝐔𝐄𝐓", tag: "Team" },
+  { id: "p1", src: p1, alt: "IUT Automech 2025 TurboCAD", tag: "Team" },
+  { id: "p2", src: p2, alt: "IUT Automech 2025 Engine Blueprint", tag: "Team" },
+  { id: "p3", src: p3, alt: "𝐈𝐂𝐌𝐄𝐑𝐄 𝟐𝟎𝟐𝟓, 𝐂𝐔𝐄𝐓", tag: "Team" },
+  { id: "p4", src: p4, alt: "IUT Automech 2025 TurboCAD", tag: "Team" },
+  { id: "p5", src: p5, alt: "IUT Automech 2025 Engine Blueprint", tag: "Team" },
+  { id: "p6", src: p6, alt: "𝐈𝐂𝐌𝐄𝐑𝐄 𝟐𝟎𝟐𝟓, 𝐂𝐔𝐄𝐓", tag: "Team" },
+  { id: "p7", src: p7, alt: "IUT Automech 2025 TurboCAD", tag: "Team" },
+  { id: "p8", src: p8, alt: "IUT Automech 2025 Engine Blueprint", tag: "Team" },
+  { id: "p9", src: p9, alt: "𝐈𝐂𝐌𝐄𝐑𝐄 𝟐𝟎𝟐𝟓, 𝐂𝐔𝐄𝐓", tag: "Team" },
+  { id: "p10", src: p10, alt: "IUT Automech 2025 TurboCAD", tag: "Team" },
+  { id: "p11", src: p11, alt: "IUT Automech 2025 Engine Blueprint", tag: "Team" },
+  { id: "p12", src: p12, alt: "𝐈𝐂𝐌𝐄𝐑𝐄 𝟐𝟎𝟐𝟓, 𝐂𝐔𝐄𝐓", tag: "Team" },
+  { id: "p13", src: p13, alt: "IUT Automech 2025 TurboCAD", tag: "Team" },
+  { id: "p14", src: p14, alt: "IUT Automech 2025 Engine Blueprint", tag: "Team" },
+  { id: "p15", src: p15, alt: "𝐈𝐂𝐌𝐄𝐑𝐄 𝟐𝟎𝟐𝟓, 𝐂𝐔𝐄𝐓", tag: "Team" },
+  { id: "p16", src: p16, alt: "IUT Automech 2025 TurboCAD", tag: "Team" },
 ];
 
 export type TimelineItem = { id: string; year: number; title: string; description: string };
