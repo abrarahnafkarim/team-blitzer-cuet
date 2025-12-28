@@ -12,7 +12,7 @@ export const siteInfo = {
 export const about = {
   title: "About Team Blitzer CUET",
   description:
-    "Team Blitzer CUET is CUET's student-led racing team competing in go-kart and formula events. We blend engineering rigor with track-tested innovation across chassis, powertrain, aero, and telemetry to push performance and mentorship on and off the circuit.",
+    "Team Blitzer CUET is CUET's student led racing team competing in go-kart and formula events. We blend engineering rigor with track tested innovation across chassis, powertrain, aero, and telemetry to push performance and mentorship on and off the circuit.",
   // Use the locally hosted video in the public folder
   videoUrl: "/about-video.mp4",
 };
@@ -27,25 +27,25 @@ export type Achievement = {
 };
 
 export const achievements: Achievement[] = [
-  { id: "a1", year: 2024, event: "National Kart Challenge", position: "1st", description: "Dominant performance with best lap delta.", image: g1, url: "/stories/building-the-2024-kart" },
-  { id: "a2", year: 2023, event: "Formula Student Local", position: "2nd", description: "Precision chassis and aero setup.", image: g2 },
-  { id: "a3", year: 2022, event: "Campus GP", position: "Champion", description: "Clean sweep across all heats.", image: g3, url: "/stories/race-weekend-strategy" },
+  { id: "a1", year: 2024, event: "IUT Automech 2025 TurboCAD", position: "Champion", description: "𝐀𝐬𝐡𝐚𝐛 𝐁𝐢𝐧 𝐅𝐚𝐫𝐮𝐤, 𝐌𝐃. 𝐌𝐞𝐡𝐞𝐝𝐢 𝐇𝐚𝐬𝐚𝐧, 𝐌𝐮𝐡𝐭𝐚𝐬𝐢𝐦𝐮𝐥 𝐁𝐚𝐫𝐢 𝟏𝐬𝐭 𝐩𝐥𝐚𝐜𝐞 in TurboCAD with precision design skills made it possible", image: g1, url: "https://www.facebook.com/photo?fbid=122105632430966266&set=pcb.122105506190966266" },
+  { id: "a2", year: 2023, event: "IUT Automech 2025 Engine Blueprint", position: "3rd", description: "𝐒𝐌 𝐀𝐧𝐢𝐬𝐮𝐥 𝐀𝐬𝐞𝐤𝐢𝐧 𝐎𝐧𝐢𝐜𝐞,𝐌𝐚𝐡𝐞𝐫𝐚𝐛 𝐇𝐨𝐬𝐬𝐚𝐢𝐧 𝐊𝐡𝐚𝐧,𝐌𝐃. 𝐑𝐚𝐬𝐡𝐢𝐝𝐮𝐥 𝐑𝐚𝐡𝐦𝐚𝐧 𝐒𝐚𝐥𝐦𝐚𝐧,𝐀𝐬𝐡𝐚𝐛 𝐁𝐢𝐧 𝐅𝐚𝐫𝐮𝐤 nailing the tough engine assembly challenge under pressure", image: g2, url: "https://www.facebook.com/photo?fbid=122105632472966266&set=pcb.122105506190966266" },
+  { id: "a3", year: 2022, event: "𝐈𝐂𝐌𝐄𝐑𝐄 𝟐𝟎𝟐𝟓, 𝐂𝐔𝐄𝐓", position: "Champion", description: "𝐀𝐬𝐡𝐚𝐛 𝐁𝐢𝐧 𝐅𝐚𝐫𝐮𝐤 𝐚𝐧𝐝 𝐌𝐞𝐡𝐞𝐝𝐢 𝐇𝐚𝐬𝐚𝐧 𝐞𝐦𝐞𝐫𝐠𝐞𝐝 𝐚𝐬 𝐜𝐡𝐚𝐦𝐩𝐢𝐨𝐧𝐬 𝐢𝐧 𝐃𝐞𝐬𝐢𝐠𝐧𝐗, 𝐞𝐱𝐭𝐞𝐧𝐝𝐢𝐧𝐠 𝐨𝐮𝐫 𝐰𝐢𝐧𝐧𝐢𝐧𝐠 𝐫𝐮𝐧!", image: g3, url: "https://www.facebook.com/share/p/1Y63pg3GjG/" },
   { id: "a4", year: 2021, event: "Innovation Award", position: "Winner", description: "Lightweight composite innovations.", image: g1 },
 ];
 
 export type GalleryItem = { id: string; src: string; alt: string; tag: "Track" | "Build" | "Team" };
 export const gallery: GalleryItem[] = [
-  { id: "g1", src: g1, alt: "Go-kart cornering with purple accent lighting", tag: "Track" },
-  { id: "g2", src: g2, alt: "Racing wheel and brake assembly macro", tag: "Build" },
-  { id: "g3", src: g3, alt: "Pit lane scene with team working on kart", tag: "Team" },
+  { id: "g1", src: g1, alt: "IUT Automech 2025 TurboCAD", tag: "Team" },
+  { id: "g2", src: g2, alt: "IUT Automech 2025 Engine Blueprint", tag: "Team" },
+  { id: "g3", src: g3, alt: "𝐈𝐂𝐌𝐄𝐑𝐄 𝟐𝟎𝟐𝟓, 𝐂𝐔𝐄𝐓", tag: "Team" },
 ];
 
 export type TimelineItem = { id: string; year: number; title: string; description: string };
 export const timeline: TimelineItem[] = [
-  { id: "t1", year: 2020, title: "Team Formation", description: "Blitzer CUET was founded by a group of passionate engineers." },
-  { id: "t2", year: 2021, title: "First Podium", description: "Secured our first podium finish in campus GP." },
-  { id: "t3", year: 2023, title: "New Powertrain", description: "Introduced upgraded powertrain and telemetry stack." },
-  { id: "t4", year: 2024, title: "National Championship", description: "Claimed the national kart challenge title." },
+  { id: "t1", year: 2025, title: "Team Formation", description: "Blitzer CUET was founded by a group of passionate engineers in 2025 ." },
+  { id: "t2", year: 2025, title: "Go-Kart Build", description: "Completed the go-kart build and started testing." },
+  { id: "t3", year: 2025, title: "Recruitment", description: "Recruited new members and started training." },
+  { id: "t4", year: 2026, title: "", description: "." },
 ];
 
 export type Story = {
