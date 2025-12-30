@@ -107,13 +107,20 @@ export const stories: Story[] = [
   },
 ];
 
-export type Sponsor = { id: string; name: string; url?: string };
+export type Sponsor = { 
+  id: string; 
+  name: string; 
+  image?: string;
+  url?: string; 
+};
+
 export const sponsors: Sponsor[] = [
-  { id: "sp1", name: "PurpleTech" },
-  { id: "sp2", name: "Velocity Labs" },
-  { id: "sp3", name: "AeroForge" },
-  { id: "sp4", name: "TorqueWorks" },
-  { id: "sp5", name: "Cuet Alumni Assoc" },
+  { 
+    id: "ashit", 
+    name: "ASHIT SOLUTION NET LTD.", 
+    image: "/ashit-logo.png", // You'll need to add this image to public folder
+    url: "https://ashitsolution.com" // Add actual URL if available
+  },
 ];
 
 export type Advisor = {
