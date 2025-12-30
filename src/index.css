@@ -113,6 +113,7 @@ All colors MUST be HSL.
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+    overscroll-behavior: none; /* Prevent overscrolling */
   }
 
   body {
@@ -122,6 +123,7 @@ All colors MUST be HSL.
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
+    overscroll-behavior: none; /* Prevent overscrolling */
     box-sizing: border-box;
   }
   /* Ensure hero image always fits and covers the hero section on all devices */
@@ -150,6 +152,7 @@ All colors MUST be HSL.
   }
   .hover-scale {
     @apply transition-transform duration-200 hover:scale-105;
+    will-change: transform;
   }
   .story-link {
     position: relative;
@@ -165,9 +168,56 @@ All colors MUST be HSL.
     transform-origin: bottom right;
     background: hsl(var(--primary));
     transition: transform 300ms ease;
+    will-change: transform;
   }
   .story-link:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+  }
+  
+  /* Performance optimizations */
+  .optimized-image {
+    opacity: 0;
+    transition: opacity 300ms ease;
+  }
+  
+  .optimized-image.loaded {
+    opacity: 1;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .hover-scale {
+      transition: none;
+    }
+    .hover-scale:hover {
+      transform: none;
+    }
+    .story-link::after {
+      transition: none;
+    }
+  }
+  
+  /* GPU acceleration for animations */
+  .will-change-transform {
+    will-change: transform;
+  }
+  
+  .will-change-opacity {
+    will-change: opacity;
+  }
+  
+  /* Optimize scrolling performance */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+  
+  /* Contain layout shifts */
+  .contain-layout {
+    contain: layout;
+  }
+  
+  .contain-paint {
+    contain: paint;
   }
 }

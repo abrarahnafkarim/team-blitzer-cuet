@@ -29,7 +29,7 @@ export const Achievements = () => {
                       alt={`${a.event} ${a.year}`}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover will-change-transform"
                     />
                   </figure>
                   <CardHeader>

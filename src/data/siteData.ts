@@ -18,6 +18,8 @@ import p13 from "@/assets/p13.jpg";
 import p14 from "@/assets/p14.jpg";
 import p15 from "@/assets/p15.jpg";
 import p16 from "@/assets/p16.jpg";
+import sajal from "@/assets/sajal.jpg";
+import rifat from "@/assets/rifat.jpg";
 
 export const siteInfo = {
   name: "Team Blitzer CUET",
@@ -112,6 +114,143 @@ export const sponsors: Sponsor[] = [
   { id: "sp3", name: "AeroForge" },
   { id: "sp4", name: "TorqueWorks" },
   { id: "sp5", name: "Cuet Alumni Assoc" },
+];
+
+export type Advisor = {
+  id: string;
+  name: string;
+  title: string;
+  department: string;
+  description: string;
+  image: string;
+  email?: string;
+};
+
+export const advisors: Advisor[] = [
+  {
+    id: "adv1",
+    name: "Dr. Sajal Chandra Banik",
+    title: "Professor",
+    department: "Department of Mechanical Engineering, CUET",
+    description: "Dr. Sajal Chandra Banik brings a strong foundation in engineering and technology to our team. His expertise spans the design and development of structures and models, advanced programming, and machine learning. Additionally, his focus on biorobotics, cognitive robots, multi-agent robotic systems, and logistic systems contributes to cutting-edge innovations in our projects.",
+    image: sajal,
+    email: "scbanik@cuet.ac.bd"
+  },
+  {
+    id: "adv2",
+    name: "Abdullah Al Rifat",
+    title: "Lecturer",
+    department: "Department of Mechanical Engineering, CUET",
+    description: "Abdullah Al Rifat is a dedicated lecturer specializing in mechanical engineering with a focus on automotive systems and racing technology. His expertise in vehicle dynamics, engine optimization, and performance tuning provides essential guidance to our racing team. He actively mentors students in practical engineering applications and innovation in motorsport technology.",
+    image: rifat,
+    email: "rifat@cuet.ac.bd"
+  },
+];
+
+export type TeamWing = {
+  id: string;
+  name: string;
+  description?: string;
+  members: string[]; // For now empty, will be populated later
+};
+
+export type TeamCategory = {
+  id: string;
+  title: string;
+  wings: TeamWing[];
+};
+
+export const teamStructure: TeamCategory[] = [
+  {
+    id: "technical",
+    title: "Technical Team",
+    wings: [
+      {
+        id: "research",
+        name: "Research, Development & Simulation",
+        description: "Focused on innovation, R&D, and computational analysis",
+        members: []
+      },
+      {
+        id: "manufacturing",
+        name: "Manufacturing and Fabrication",
+        description: "Hands-on building, machining, and assembly",
+        members: []
+      },
+      {
+        id: "supply",
+        name: "Supply, Sourcing and Inventory",
+        description: "Parts procurement, inventory management, and logistics",
+        members: []
+      },
+      {
+        id: "electrical",
+        name: "Electrical",
+        description: "Electronics, wiring, sensors, and control systems",
+        members: []
+      },
+      {
+        id: "vehicle",
+        name: "Vehicle and Aerodynamics",
+        description: "Chassis design, aerodynamics, and vehicle dynamics",
+        members: []
+      }
+    ]
+  },
+  {
+    id: "non-technical",
+    title: "Non Technical Team",
+    wings: [
+      {
+        id: "corporate",
+        name: "Corporate",
+        description: "Leadership, strategy, and organizational management",
+        members: []
+      },
+      {
+        id: "documentation",
+        name: "Documentation and Content",
+        description: "Technical writing, reports, and content creation",
+        members: []
+      },
+      {
+        id: "sponsorship",
+        name: "Sponsorship and Collaboration",
+        description: "Partnership development and sponsor relations",
+        members: []
+      },
+      {
+        id: "graphics",
+        name: "Graphics Design",
+        description: "Visual design, branding, and creative assets",
+        members: []
+      },
+      {
+        id: "promotion",
+        name: "Promotion and Branding",
+        description: "Marketing, social media, and brand management",
+        members: []
+      },
+      {
+        id: "photography",
+        name: "Photography and Videography",
+        description: "Visual storytelling and media production",
+        members: []
+      },
+      {
+        id: "finance",
+        name: "Finance",
+        description: "Budget management and financial planning",
+        members: []
+      },
+      {
+        id: "web",
+        name: "Web Development",
+        description: "Digital platforms and web technologies",
+        members: []
+      }
+    ]
+  }
 ];
 
 export type NewsItem = { id: string; url: string; title: string; image: string };

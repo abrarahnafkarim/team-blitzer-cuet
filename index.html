@@ -17,10 +17,17 @@
     <meta name="twitter:site" content="@lovable_dev" />
   <meta name="twitter:image" content="/blitzer_logo.jpg" />
 
-    <!-- Fonts -->
+    <!-- Fonts with optimized loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/blitzer_logo.jpg" as="image" />
+    
+    <!-- Resource hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   </head>
 
   <body>
