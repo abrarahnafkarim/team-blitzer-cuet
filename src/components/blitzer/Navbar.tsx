@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 const NAV_ITEMS = [
+  { label: "Advisors", href: "#advisors" },
+  { label: "Team Structure", href: "#team-structure" },
   { label: "Achievements", href: "#achievements" },
   { label: "Gallery", href: "#gallery" },
   { label: "Timeline", href: "#timeline" },

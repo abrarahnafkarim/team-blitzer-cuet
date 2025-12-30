@@ -2,6 +2,8 @@ import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/blitzer/Navbar";
 import { Hero } from "@/components/blitzer/Hero";
 import { About } from "@/components/blitzer/About";
+import { Advisors } from "@/components/blitzer/Advisors";
+import { TeamStructure } from "@/components/blitzer/TeamStructure";
 import { Achievements } from "@/components/blitzer/Achievements";
 import { Gallery } from "@/components/blitzer/Gallery";
 import { Timeline } from "@/components/blitzer/Timeline";
@@ -27,6 +29,8 @@ const Index = () => {
         <main className="flex-1">
           <Hero />
           <About />
+          <Advisors />
+          <TeamStructure />
           <Achievements />
           <Gallery />
           <Timeline />

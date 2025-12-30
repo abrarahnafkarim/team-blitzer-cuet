@@ -18,10 +18,10 @@ export const Gallery = () => {
     return filter === "All" ? items : items.filter((i) => i.tag === filter);
   }, [filter]);
 
-  const onOpen = (item: typeof items[number]) => {
+  const onOpen = React.useCallback((item: typeof items[number]) => {
     setSelected(item);
     setOpen(true);
-  };
+  }, []);
 
   return (
     <section id="gallery" className="scroll-mt-24 py-16 md:py-24">
