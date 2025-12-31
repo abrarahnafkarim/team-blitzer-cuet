@@ -27,7 +27,11 @@ export const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="py-4 text-center text-xs text-muted-foreground">© {new Date().getFullYear()} Team Blitzer CUET. All rights reserved.</div>
+      <div className="py-4 text-center text-xs text-muted-foreground">
+        © {new Date().getFullYear()} Team Blitzer CUET. All rights reserved.
+        <br />
+        This website is developed by <a href="https://www.linkedin.com/in/abrar-ahnaf-karim-bangladesh/" target="_blank" rel="noreferrer" className="story-link">Abrar Ahnaf Karim</a>
+      </div>
     </footer>
   );
 };

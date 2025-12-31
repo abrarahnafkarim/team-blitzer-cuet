@@ -4,14 +4,13 @@ import { Hero } from "@/components/blitzer/Hero";
 import { About } from "@/components/blitzer/About";
 import { Advisors } from "@/components/blitzer/Advisors";
 import { TeamStructure } from "@/components/blitzer/TeamStructure";
+import { Events } from "@/components/blitzer/Events";
 import { Achievements } from "@/components/blitzer/Achievements";
 import { Gallery } from "@/components/blitzer/Gallery";
 import { Timeline } from "@/components/blitzer/Timeline";
-import { Stories } from "@/components/blitzer/Stories";
 import { Sponsors } from "@/components/blitzer/Sponsors";
 import { Footer } from "@/components/blitzer/Footer";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
-import { NewsMedia } from "@/components/blitzer/NewsMedia";
 
 const Index = () => {
   const title = "Team Blitzer CUET — Premium Racing Team";
@@ -31,11 +30,10 @@ const Index = () => {
           <About />
           <Advisors />
           <TeamStructure />
+          <Events />
           <Achievements />
           <Gallery />
           <Timeline />
-          <Stories />
-          <NewsMedia />
           <Sponsors />
         </main>
         <Footer />

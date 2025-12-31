@@ -1,0 +1,11 @@
+import{c as i,a as o,b as d}from"./index-BbNJ4jdd.js";import{j as r,P as f}from"./ui-DVskvsiq.js";import{r as s}from"./vendor-CwEH9sB7.js";/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const A=i("Hash",[["line",{x1:"4",x2:"20",y1:"9",y2:"9",key:"4lhtct"}],["line",{x1:"4",x2:"20",y1:"15",y2:"15",key:"vyu0kd"}],["line",{x1:"10",x2:"8",y1:"3",y2:"21",key:"1ggp8o"}],["line",{x1:"16",x2:"14",y1:"3",y2:"21",key:"weycgp"}]]);/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const h=i("Phone",[["path",{d:"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z",key:"foiqr5"}]]);var u="Label",n=s.forwardRef((a,t)=>r.jsx(f.label,{...a,ref:t,onMouseDown:e=>{e.target.closest("button, input, select, textarea")||(a.onMouseDown?.(e),!e.defaultPrevented&&e.detail>1&&e.preventDefault())}}));n.displayName=u;var c=n;const x=d("text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"),m=s.forwardRef(({className:a,...t},e)=>r.jsx(c,{ref:e,className:o(x(),a),...t}));m.displayName=c.displayName;const p=d("relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground",{variants:{variant:{default:"bg-background text-foreground",destructive:"border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive"}},defaultVariants:{variant:"default"}}),v=s.forwardRef(({className:a,variant:t,...e},l)=>r.jsx("div",{ref:l,role:"alert",className:o(p({variant:t}),a),...e}));v.displayName="Alert";const g=s.forwardRef(({className:a,...t},e)=>r.jsx("h5",{ref:e,className:o("mb-1 font-medium leading-none tracking-tight",a),...t}));g.displayName="AlertTitle";const y=s.forwardRef(({className:a,...t},e)=>r.jsx("div",{ref:e,className:o("text-sm [&_p]:leading-relaxed",a),...t}));y.displayName="AlertDescription";export{v as A,A as H,m as L,h as P,y as a};

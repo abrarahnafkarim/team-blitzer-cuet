@@ -8,14 +8,14 @@ export const Hero: React.FC = () => {
   const [style, setStyle] = React.useState({ transform: "translateY(0px) scale(1)" });
 
   const updateParallax = React.useCallback(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const viewportH = window.innerHeight || 1;
-    const progress = Math.min(1, Math.max(0, 1 - rect.top / viewportH));
-    const translate = -progress * 30; // px
-    const scale = 1 + progress * 0.05;
-    setStyle({ transform: `translateY(${translate}px) scale(${scale})` });
+      const el = containerRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const viewportH = window.innerHeight || 1;
+      const progress = Math.min(1, Math.max(0, 1 - rect.top / viewportH));
+      const translate = -progress * 30; // px
+      const scale = 1 + progress * 0.05;
+      setStyle({ transform: `translateY(${translate}px) scale(${scale})` });
   }, []);
 
   useOptimizedScroll(updateParallax, 16);

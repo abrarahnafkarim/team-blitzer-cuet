@@ -79,33 +79,6 @@ export const timeline: TimelineItem[] = [
   { id: "t4", year: 2026, title: "", description: "." },
 ];
 
-export type Story = {
-  id: string;
-  slug: string;
-  title: string;
-  summary: string;
-  content: string;
-  date: string;
-};
-
-export const stories: Story[] = [
-  {
-    id: "s1",
-    slug: "building-the-2024-kart",
-    title: "Building the 2024 Kart",
-    summary: "From CAD to track: our iterative design and testing journey.",
-    content: "Detailed write-up of our 2024 build including chassis, aero, and telemetry.",
-    date: "2024-06-12",
-  },
-  {
-    id: "s2",
-    slug: "race-weekend-strategy",
-    title: "Race Weekend Strategy",
-    summary: "How we approach practice, quali, and race pace management.",
-    content: "Strategy notes covering tyres, fuel, driver stints, and pit discipline.",
-    date: "2024-04-02",
-  },
-];
 
 export type Sponsor = { 
   id: string; 
