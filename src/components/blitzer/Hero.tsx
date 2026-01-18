@@ -52,7 +52,13 @@ export const Hero: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4" style={{ transform: 'translateY(-5px)' }}>
+        <h1 
+          className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-0 text-white"
+          style={{ 
+            transform: 'translateY(-5px)',
+            textShadow: '0 4px 8px rgba(0, 0, 0, 0.9), 0 8px 16px rgba(0, 0, 0, 0.8), 0 12px 24px rgba(0, 0, 0, 0.7), 0 16px 32px rgba(0, 0, 0, 0.6)'
+          }}
+        >
           {(["Team", "Blitzer"] as const).map((word, i) => (
             <motion.span
               key={word}

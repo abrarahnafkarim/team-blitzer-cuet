@@ -11,6 +11,8 @@ import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
 
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
+const Team = lazy(() => import("./pages/Team"));
+const Articles = lazy(() => import("./pages/Articles"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Auth = lazy(() => import("./pages/Auth"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
@@ -52,6 +54,8 @@ const App = () => (
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Index />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/articles" element={<Articles />} />
             <Route path="/auth" element={<Auth />} />
             
             {/* Protected Dashboard Routes - All require authentication */}

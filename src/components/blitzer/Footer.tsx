@@ -16,14 +16,17 @@ export const Footer = () => {
           <a href="#sponsors" className="text-sm story-link">Sponsors</a>
         </nav>
         <div className="flex items-center gap-4 justify-start md:justify-end">
-          <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook">
+          <a href="https://www.facebook.com/profile.php?id=61578987981842" target="_blank" rel="noreferrer" aria-label="Facebook">
             <Facebook className="h-5 w-5" />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <a href="https://www.instagram.com/team_blitzer_cuet?igsh=YnI2aTFiOWN2OG1z" target="_blank" rel="noreferrer" aria-label="Instagram">
             <Instagram className="h-5 w-5" />
           </a>
-          <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube">
-            <Youtube className="h-5 w-5" />
+          <a href="https://www.linkedin.com/in/team-blitzer-cuet-4ba959380/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            {/* No Linkedin in lucide-react; use LucideLinkedin or add appropriate import if available */}
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8a6 6 0 016 6v5h-4v-5a2 2 0 00-4 0v5h-4v-9h4v1.7A3.993 3.993 0 0116 8zM2 9h4v12H2zM4 3a2 2 0 100 4 2 2 0 000-4z" />
+            </svg>
           </a>
         </div>
       </div>

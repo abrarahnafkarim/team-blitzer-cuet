@@ -7,7 +7,8 @@ export const About: React.FC = () => {
   const sectionRef = React.useRef<HTMLDivElement | null>(null);
   const videoRef = React.useRef<HTMLVideoElement | null>(null);
   const [desc, setDesc] = React.useState<string>(about.description);
-  const [showWatermark, setShowWatermark] = React.useState(true);
+  const [isPlaying, setIsPlaying] = React.useState(false);
+  const [showMuteIcon, setShowMuteIcon] = React.useState(true);
 
   React.useEffect(() => {
     fetch('/about.json')
@@ -24,16 +25,17 @@ export const About: React.FC = () => {
     const section = sectionRef.current;
     if (!video || !section) return;
     video.muted = true;
-    video.volume = 0;
-    video.autoplay = true;
+    video.volume = 1.0;
     video.loop = true;
+    
     let observer: IntersectionObserver | null = null;
     const handlePlayPause = (entries: IntersectionObserverEntry[]) => {
       const entry = entries[0];
       if (entry.isIntersecting) {
-        video.play().catch(() => {});
+        video.play().then(() => setIsPlaying(true)).catch(() => {});
       } else {
         video.pause();
+        setIsPlaying(false);
       }
     };
     observer = new window.IntersectionObserver(handlePlayPause, {
@@ -45,13 +47,65 @@ export const About: React.FC = () => {
     };
   }, []);
 
-  // Handle click to unmute and remove watermark
-  const handleVideoClick = () => {
+  // Track play/pause state
+  React.useEffect(() => {
     const video = videoRef.current;
-    if (video) {
-      video.muted = false;
-      video.volume = 1.0;
-      setShowWatermark(false);
+    if (!video) return;
+    
+    const handlePlay = () => setIsPlaying(true);
+    const handlePause = () => setIsPlaying(false);
+    
+    video.addEventListener('play', handlePlay);
+    video.addEventListener('pause', handlePause);
+    
+    return () => {
+      video.removeEventListener('play', handlePlay);
+      video.removeEventListener('pause', handlePause);
+    };
+  }, []);
+
+  // Handle mute icon click - unmute and hide icon
+  const handleMuteClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+    
+    video.muted = false;
+    video.volume = 1.0;
+    setShowMuteIcon(false);
+  };
+
+  // Handle play/pause toggle (only after mute icon is hidden)
+  const togglePlayPause = (e?: React.MouseEvent | React.KeyboardEvent) => {
+    e?.stopPropagation();
+    
+    // If mute icon is still showing, do nothing
+    if (showMuteIcon) return;
+    
+    const video = videoRef.current;
+    if (!video) return;
+    
+    if (video.paused) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  };
+
+  // Handle keyboard controls
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault();
+      if (showMuteIcon) {
+        const video = videoRef.current;
+        if (video) {
+          video.muted = false;
+          video.volume = 1.0;
+          setShowMuteIcon(false);
+        }
+      } else {
+        togglePlayPause(e);
+      }
     }
   };
 
@@ -82,36 +136,63 @@ export const About: React.FC = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
         >
-          <div className="aspect-video w-full bg-muted">
+          <div 
+            className="aspect-video w-full bg-muted relative cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary" 
+            onClick={togglePlayPause}
+            onKeyDown={handleKeyDown}
+            tabIndex={0}
+            role="button"
+            aria-label={isPlaying ? "Pause video" : "Play video"}
+          >
             <video
               ref={videoRef}
               src={about.videoUrl}
-              className="h-full w-full object-cover cursor-pointer"
+              className="h-full w-full object-cover"
               preload="auto"
               playsInline
               loop
               controls={false}
               muted
-              autoPlay
               aria-label="Team Blitzer CUET promo video"
               style={{ display: 'block', width: '100%', height: '100%', objectFit: 'cover' }}
-              onClick={handleVideoClick}
             />
-            {showWatermark && (
+            {/* Mute Icon - Shows initially, disappears after click */}
+            {showMuteIcon && (
               <div
-                className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                style={{ background: 'rgba(0,0,0,0.10)' }}
+                className="absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity duration-300"
               >
-                <span
-                  className="bg-white/80 rounded-full shadow flex items-center justify-center select-none"
-                  style={{ width: 48, height: 48, pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                <button
+                  onClick={handleMuteClick}
+                  className="bg-white/30 hover:bg-white/50 backdrop-blur-sm rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white"
+                  style={{ width: 80, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  aria-label="Click to unmute"
                 >
-                  {/* Simple mute volume SVG icon */}
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-700">
-                    <path d="M9 9v6h4l5 5V4l-5 5H9z" />
-                    <line x1="1" y1="1" x2="23" y2="23" stroke="red" strokeWidth="2" />
+                  {/* Mute icon */}
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="white" stroke="white" />
+                    <line x1="23" y1="9" x2="17" y2="15" stroke="red" strokeWidth="3" />
+                    <line x1="17" y1="9" x2="23" y2="15" stroke="red" strokeWidth="3" />
                   </svg>
-                </span>
+                </button>
+              </div>
+            )}
+            
+            {/* Play/Pause Button - Only visible when paused AND mute icon is hidden */}
+            {!showMuteIcon && !isPlaying && (
+              <div
+                className="absolute inset-0 flex items-center justify-center bg-black/20 transition-opacity duration-300"
+              >
+                <button
+                  onClick={(e) => togglePlayPause(e)}
+                  className="bg-white/30 hover:bg-white/50 backdrop-blur-sm rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white"
+                  style={{ width: 80, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  aria-label="Play video"
+                >
+                  {/* Play icon */}
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="white" className="ml-1">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
               </div>
             )}
           </div>

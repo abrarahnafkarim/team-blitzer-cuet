@@ -1,9 +1,8 @@
 import { Helmet } from "react-helmet-async";
-import { Navbar } from "@/components/blitzer/Navbar";
+import { Sidebar } from "@/components/blitzer/Sidebar";
 import { Hero } from "@/components/blitzer/Hero";
 import { About } from "@/components/blitzer/About";
 import { Advisors } from "@/components/blitzer/Advisors";
-import { TeamStructure } from "@/components/blitzer/TeamStructure";
 import { Events } from "@/components/blitzer/Events";
 import { Achievements } from "@/components/blitzer/Achievements";
 import { Gallery } from "@/components/blitzer/Gallery";
@@ -24,19 +23,20 @@ const Index = () => {
         <link rel="canonical" href={typeof window !== 'undefined' ? window.location.href : ''} />
       </Helmet>
       <div className="min-h-screen flex flex-col bg-background">
-        <Navbar />
-        <main className="flex-1">
-          <Hero />
-          <About />
-          <Advisors />
-          <TeamStructure />
-          <Events />
-          <Achievements />
-          <Gallery />
-          <Timeline />
-          <Sponsors />
-        </main>
-        <Footer />
+        <Sidebar />
+        <div className="flex-1 flex flex-col transition-all duration-300" id="main-content">
+          <main className="flex-1">
+            <Hero />
+            <About />
+            <Advisors />
+            <Events />
+            <Achievements />
+            <Gallery />
+            <Timeline />
+            <Sponsors />
+          </main>
+          <Footer />
+        </div>
       </div>
     </ThemeProvider>
   );
