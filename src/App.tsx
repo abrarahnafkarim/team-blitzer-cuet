@@ -8,6 +8,8 @@ import { lazy, Suspense } from "react";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
+import { SidebarDemo } from "@/components/demo";
+import TetrisLoading from "@/components/ui/tetris-loader";
 
 // Lazy load pages for better performance
 const Index = lazy(() => import("./pages/Index"));
@@ -29,16 +31,10 @@ const queryClient = new QueryClient({
   },
 });
 
-// Loading fallback component
+// Loading fallback — Motorsport Tetris preloader
 const LoadingFallback = () => (
   <div className="min-h-screen flex items-center justify-center bg-background">
-    <div className="text-center">
-      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
-      <p className="text-muted-foreground">Loading application...</p>
-      <p className="text-xs text-muted-foreground mt-2">
-        This should only take a few seconds
-      </p>
-    </div>
+    <TetrisLoading size="sm" speed="fast" />
   </div>
 );
 
@@ -57,6 +53,7 @@ const App = () => (
             <Route path="/team" element={<Team />} />
             <Route path="/articles" element={<Articles />} />
             <Route path="/auth" element={<Auth />} />
+            <Route path="/sidebar-demo" element={<SidebarDemo />} />
             
             {/* Protected Dashboard Routes - All require authentication */}
             <Route
