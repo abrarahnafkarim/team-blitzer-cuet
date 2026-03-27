@@ -17,12 +17,17 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      // Deduplicate motion libraries — route "motion" imports to framer-motion
+      "motion/react": "framer-motion",
+      "motion": "framer-motion",
     },
   },
   build: {
     // Optimize build performance
     target: 'esnext',
     minify: 'esbuild',
+    cssMinify: true,
+    sourcemap: mode === 'development',
     rollupOptions: {
       output: {
         // Manual chunking for better caching

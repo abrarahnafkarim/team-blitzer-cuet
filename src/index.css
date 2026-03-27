@@ -220,4 +220,10 @@ All colors MUST be HSL.
   .contain-paint {
     contain: paint;
   }
+  
+  /* Defer rendering of below-fold sections until near viewport */
+  .content-defer {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
+  }
 }

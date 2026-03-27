@@ -25,6 +25,9 @@ const AdvisorCard: React.FC<{ advisor: typeof advisors[number]; index: number }>
                   alt={advisor.name}
                   className="w-full h-full object-cover"
                   loading="lazy"
+                  decoding="async"
+                  width={160}
+                  height={160}
                 />
               </div>
             </div>

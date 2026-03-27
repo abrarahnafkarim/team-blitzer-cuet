@@ -91,8 +91,14 @@ export const sponsors: Sponsor[] = [
   { 
     id: "ashit", 
     name: "ASHIT SOLUTION NET LTD.", 
-    image: "/ashit-logo.png", // You'll need to add this image to public folder
-    url: "https://ashitsolution.com" // Add actual URL if available
+    image: "/ashit-logo.png",
+    url: "https://ashitsolution.com"
+  },
+  { 
+    id: "ansys", 
+    name: "Ansys", 
+    image: "/ansys-logo.png",
+    url: "https://www.ansys.com"
   },
 ];
 

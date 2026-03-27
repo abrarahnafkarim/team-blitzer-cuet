@@ -10,6 +10,16 @@ import { Timeline } from "@/components/blitzer/Timeline";
 import { Sponsors } from "@/components/blitzer/Sponsors";
 import { Footer } from "@/components/blitzer/Footer";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import React from "react";
+
+// Memoize below-fold sections to prevent re-renders
+const MemoAdvisors = React.memo(Advisors);
+const MemoEvents = React.memo(Events);
+const MemoAchievements = React.memo(Achievements);
+const MemoGallery = React.memo(Gallery);
+const MemoTimeline = React.memo(Timeline);
+const MemoSponsors = React.memo(Sponsors);
+const MemoFooter = React.memo(Footer);
 
 const Index = () => {
   const title = "Team Blitzer CUET — Premium Racing Team";
@@ -28,14 +38,26 @@ const Index = () => {
           <main className="flex-1">
             <Hero />
             <About />
-            <Advisors />
-            <Events />
-            <Achievements />
-            <Gallery />
-            <Timeline />
-            <Sponsors />
+            <div className="content-defer">
+              <MemoAdvisors />
+            </div>
+            <div className="content-defer">
+              <MemoEvents />
+            </div>
+            <div className="content-defer">
+              <MemoAchievements />
+            </div>
+            <div className="content-defer">
+              <MemoGallery />
+            </div>
+            <div className="content-defer">
+              <MemoTimeline />
+            </div>
+            <div className="content-defer">
+              <MemoSponsors />
+            </div>
           </main>
-          <Footer />
+          <MemoFooter />
         </div>
       </div>
     </ThemeProvider>

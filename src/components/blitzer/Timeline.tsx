@@ -62,6 +62,7 @@ const timelineEntries = [
               alt={`Team Formation - ${i + 1}`}
               className={`rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full ${imageShadow}`}
               loading="lazy"
+              decoding="async"
             />
           ))}
         </div>
@@ -102,6 +103,7 @@ const timelineEntries = [
               alt={`Go-Kart Build - ${i + 1}`}
               className={`rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full ${imageShadow}`}
               loading="lazy"
+              decoding="async"
             />
           ))}
         </div>
@@ -113,6 +115,7 @@ const timelineEntries = [
               alt={`Go-Kart Build - ${i + 5}`}
               className={`rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full ${imageShadow}`}
               loading="lazy"
+              decoding="async"
             />
           ))}
         </div>
@@ -153,6 +156,7 @@ const timelineEntries = [
               alt={`Workshop - ${i + 1}`}
               className={`rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full ${imageShadow}`}
               loading="lazy"
+              decoding="async"
             />
           ))}
         </div>
@@ -193,6 +197,7 @@ const timelineEntries = [
               alt={`23 Batch Recruitment - ${i + 1}`}
               className={`rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full ${imageShadow}`}
               loading="lazy"
+              decoding="async"
             />
           ))}
         </div>
@@ -204,6 +209,7 @@ const timelineEntries = [
               alt={`23 Batch Recruitment - ${i + 5}`}
               className={`rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full ${imageShadow}`}
               loading="lazy"
+              decoding="async"
             />
           ))}
         </div>

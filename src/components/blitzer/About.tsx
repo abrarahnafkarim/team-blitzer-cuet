@@ -148,7 +148,7 @@ export const About: React.FC = () => {
               ref={videoRef}
               src={about.videoUrl}
               className="h-full w-full object-cover"
-              preload="auto"
+              preload="none"
               playsInline
               loop
               controls={false}

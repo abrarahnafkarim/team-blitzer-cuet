@@ -282,10 +282,12 @@ FROM courses c WHERE c.title = 'Go-Kart Engineering Fundamentals';
 -- USER INFORMATION VIEW (for admin dashboard)
 -- ============================================
 -- This view provides user information without exposing passwords
--- Passwords are hashed by Supabase Auth and cannot be viewed
--- This view shows all user metadata that can be useful for admin purposes
+-- Uses SECURITY INVOKER so it respects the querying user's permissions
+-- Access restricted to authenticated users only (anon is revoked)
 
-CREATE OR REPLACE VIEW user_info_view AS
+CREATE OR REPLACE VIEW public.user_info_view
+WITH (security_invoker = true)
+AS
 SELECT 
   u.id,
   u.email,
@@ -306,9 +308,9 @@ FROM auth.users u
 LEFT JOIN public.profiles p ON u.id = p.id
 ORDER BY u.created_at DESC;
 
--- Grant access to the view (adjust permissions as needed)
--- Note: This view is read-only and does not expose passwords
--- Passwords are securely hashed by Supabase Auth and cannot be retrieved
+-- Revoke access from anon role (only authenticated users should see this)
+REVOKE ALL ON public.user_info_view FROM anon;
+GRANT SELECT ON public.user_info_view TO authenticated;
 
 SELECT '✅ Database setup completed successfully!' AS status;
 

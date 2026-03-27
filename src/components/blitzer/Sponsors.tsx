@@ -28,6 +28,9 @@ export const Sponsors = () => {
                           alt={sp.name}
                           className="max-w-full h-auto max-h-32 object-contain"
                           loading="lazy"
+                          decoding="async"
+                          width={300}
+                          height={128}
                         />
                         <span className="text-sm text-muted-foreground text-center">
                           {sp.name}
@@ -48,6 +51,9 @@ export const Sponsors = () => {
                           alt={sp.name}
                           className="max-w-full h-auto max-h-32 object-contain"
                           loading="lazy"
+                          decoding="async"
+                          width={300}
+                          height={128}
                         />
                         <span className="text-sm text-muted-foreground text-center">
                           {sp.name}

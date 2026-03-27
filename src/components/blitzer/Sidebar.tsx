@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, User, LogIn, Users, Calendar, Trophy, Image, Clock, Handshake, GraduationCap, Info, Home, FileText } from "lucide-react";
+import { Menu, X, Users, Calendar, Trophy, Image, Clock, Handshake, GraduationCap, Info, Home, FileText } from "lucide-react";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
-import { Button } from "@/components/ui/button";
-import { useAuth } from "@/contexts/AuthContext";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -28,7 +26,6 @@ export const Sidebar = () => {
   const [hovered, setHovered] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
   const location = useLocation();
-  const { user, loading } = useAuth();
 
   const isExpanded = hovered;
 
@@ -63,15 +60,18 @@ export const Sidebar = () => {
     }
   }, [location.pathname]);
 
-  // Track active section based on scroll
+  // Track active section based on scroll (throttled with rAF)
   useEffect(() => {
-    const handleScroll = () => {
-      const hashItems = NAV_ITEMS.filter((item) => !item.isRoute);
-      const sections = hashItems.map((item) => ({
-        id: item.href.replace("#", ""),
-        href: item.href,
-      }));
+    let rafId = 0;
+    let ticking = false;
 
+    const hashItems = NAV_ITEMS.filter((item) => !item.isRoute);
+    const sections = hashItems.map((item) => ({
+      id: item.href.replace("#", ""),
+      href: item.href,
+    }));
+
+    const updateActiveSection = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -82,6 +82,7 @@ export const Sidebar = () => {
           const sectionBottom = sectionTop + rect.height;
           if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
             setActiveSection(sections[i].href);
+            ticking = false;
             return;
           }
         }
@@ -90,15 +91,24 @@ export const Sidebar = () => {
       if (window.scrollY < 100) {
         setActiveSection("");
       }
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        rafId = requestAnimationFrame(updateActiveSection);
+      }
     };
 
     if (location.pathname === "/") {
-      handleScroll();
+      updateActiveSection();
       window.addEventListener("scroll", handleScroll, { passive: true });
       window.addEventListener("resize", handleScroll, { passive: true });
       return () => {
         window.removeEventListener("scroll", handleScroll);
         window.removeEventListener("resize", handleScroll);
+        cancelAnimationFrame(rafId);
       };
     } else {
       setActiveSection("");
@@ -234,23 +244,6 @@ export const Sidebar = () => {
               </a>
               <nav className="flex-1 p-3 space-y-1 overflow-y-auto">{renderNavItems(false)}</nav>
               <div className="p-4 border-t border-border space-y-3">
-                {!loading && (
-                  user ? (
-                    <Link to="/dashboard">
-                      <Button className="w-full gap-2 bg-primary hover:bg-primary/90 text-white">
-                        <User className="h-4 w-4" />
-                        <span>Dashboard</span>
-                      </Button>
-                    </Link>
-                  ) : (
-                    <Link to="/auth">
-                      <Button className="w-full gap-2 bg-primary hover:bg-primary/90 text-white font-medium">
-                        <LogIn className="h-4 w-4" />
-                        <span>Login</span>
-                      </Button>
-                    </Link>
-                  )
-                )}
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-muted-foreground">Theme</span>
                   <ThemeToggle />
@@ -300,33 +293,8 @@ export const Sidebar = () => {
           {renderNavItems(!isExpanded)}
         </nav>
 
-        {/* Auth + Theme */}
+        {/* Theme */}
         <div className={cn("p-3 border-t border-border space-y-3", !isExpanded && "flex flex-col items-center")}>
-          {!loading && (
-            isExpanded ? (
-              user ? (
-                <Link to="/dashboard">
-                  <Button className="w-full gap-2 bg-primary hover:bg-primary/90 text-white">
-                    <User className="h-4 w-4" />
-                    <span>Dashboard</span>
-                  </Button>
-                </Link>
-              ) : (
-                <Link to="/auth">
-                  <Button className="w-full gap-2 bg-primary hover:bg-primary/90 text-white font-medium">
-                    <LogIn className="h-4 w-4" />
-                    <span>Login</span>
-                  </Button>
-                </Link>
-              )
-            ) : (
-              <Link to={user ? "/dashboard" : "/auth"} title={user ? "Dashboard" : "Login"}>
-                <Button className="w-auto px-3 bg-primary hover:bg-primary/90 text-white" size="sm">
-                  {user ? <User className="h-4 w-4" /> : <LogIn className="h-4 w-4" />}
-                </Button>
-              </Link>
-            )
-          )}
           <div className={cn("flex items-center", isExpanded ? "justify-between" : "justify-center")}>
             {isExpanded && <span className="text-sm text-muted-foreground">Theme</span>}
             <ThemeToggle />
