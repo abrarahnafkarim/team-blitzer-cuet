@@ -18,8 +18,6 @@ import p13 from "@/assets/p13.jpg";
 import p14 from "@/assets/p14.jpg";
 import p15 from "@/assets/p15.jpg";
 import p16 from "@/assets/p16.jpg";
-import sajal from "@/assets/sajal.jpg";
-import rifat from "@/assets/rifat.jpg";
 
 export const siteInfo = {
   name: "Team Blitzer CUET",
@@ -100,6 +98,12 @@ export const sponsors: Sponsor[] = [
     image: "/ansys-logo.png",
     url: "https://www.ansys.com"
   },
+  { 
+    id: "solidworks", 
+    name: "SOLIDWORKS", 
+    image: "/solidworks-logo.png",
+    url: "https://www.solidworks.com"
+  },
 ];
 
 export type Advisor = {
@@ -115,22 +119,13 @@ export type Advisor = {
 export const advisors: Advisor[] = [
   {
     id: "adv1",
-    name: "Dr. Sajal Chandra Banik",
+    name: "Prof. Dr. Jamal Uddin Ahamed",
     title: "Professor",
     department: "Department of Mechanical Engineering, CUET",
-    description: "Dr. Sajal Chandra Banik brings a strong foundation in engineering and technology to our team. His expertise spans the design and development of structures and models, advanced programming, and machine learning. Additionally, his focus on biorobotics, cognitive robots, multi-agent robotic systems, and logistic systems contributes to cutting-edge innovations in our projects.",
-    image: sajal,
-    email: "scbanik@cuet.ac.bd"
-  },
-  {
-    id: "adv2",
-    name: "Abdullah Al Rifat",
-    title: "Lecturer",
-    department: "Department of Mechanical Engineering, CUET",
-    description: "Abdullah Al Rifat is a dedicated lecturer specializing in mechanical engineering with a focus on automotive systems and racing technology. His expertise in vehicle dynamics, engine optimization, and performance tuning provides essential guidance to our racing team. He actively mentors students in practical engineering applications and innovation in motorsport technology.",
-    image: rifat,
-    email: "rifat@cuet.ac.bd"
-  },
+    description: "Prof. Dr. Jamal Uddin Ahamed is a Professor in the Department of Mechanical Engineering and the Pro-Vice-Chancellor of CUET. With extensive expertise in energy, exergy, heat transfer, and HVAC systems, his visionary leadership and academic excellence provide invaluable guidance to the team, driving innovation and technical mastery in our engineering projects.",
+    image: "/jamal.jpg",
+    email: "jamal@cuet.ac.bd"
+  }
 ];
 
 export type TeamWing = {
