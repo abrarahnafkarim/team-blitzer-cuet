@@ -4,14 +4,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
-import { lazy, Suspense } from "react";
-import TetrisLoading from "@/components/ui/tetris-loader";
 
-// Lazy load pages for better performance
-const Index = lazy(() => import("./pages/Index"));
-const Team = lazy(() => import("./pages/Team"));
-const Articles = lazy(() => import("./pages/Articles"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+import Index from "./pages/Index";
+import Team from "./pages/Team";
+import Articles from "./pages/Articles";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,13 +21,6 @@ const queryClient = new QueryClient({
   },
 });
 
-// Loading fallback — Motorsport Tetris preloader
-const LoadingFallback = () => (
-  <div className="min-h-screen flex items-center justify-center bg-background">
-    <TetrisLoading size="sm" speed="fast" />
-  </div>
-);
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <HelmetProvider>
@@ -38,7 +28,6 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-            <Suspense fallback={<LoadingFallback />}>
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Index />} />
@@ -48,7 +37,6 @@ const App = () => (
             {/* Catch-all route - must be last */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-            </Suspense>
         </BrowserRouter>
       </TooltipProvider>
     </HelmetProvider>

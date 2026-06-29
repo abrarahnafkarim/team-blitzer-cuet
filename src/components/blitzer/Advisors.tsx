@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { advisors } from "@/data/siteData";
 import { SplitText } from "@/components/motion/SplitText";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail } from "lucide-react";
+import { Mail, Phone, Globe } from "lucide-react";
 
 const AdvisorCard: React.FC<{ advisor: typeof advisors[number]; index: number }> = ({ advisor, index }) => {
   return (
@@ -50,18 +50,46 @@ const AdvisorCard: React.FC<{ advisor: typeof advisors[number]; index: number }>
                 {advisor.description}
               </p>
               
-              {/* Contact Info */}
-              {advisor.email && (
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Mail className="w-4 h-4 text-primary" />
-                  <a 
-                    href={`mailto:${advisor.email}`}
-                    className="hover:text-primary transition-colors"
-                  >
-                    {advisor.email}
-                  </a>
-                </div>
-              )}
+              <div className="flex flex-col gap-2 mt-4">
+                {/* Contact Info */}
+                {advisor.email && (
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                    <a 
+                      href={`mailto:${advisor.email}`}
+                      className="hover:text-primary transition-colors truncate"
+                    >
+                      {advisor.email}
+                    </a>
+                  </div>
+                )}
+                
+                {advisor.phone && (
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                    <a 
+                      href={`tel:${advisor.phone.replace(/[\s+]/g, '')}`}
+                      className="hover:text-primary transition-colors truncate"
+                    >
+                      {advisor.phone}
+                    </a>
+                  </div>
+                )}
+                
+                {advisor.website && (
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <Globe className="w-4 h-4 text-primary flex-shrink-0" />
+                    <a 
+                      href={advisor.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors truncate"
+                    >
+                      {advisor.website.replace(/^https?:\/\//, '')}
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </CardContent>

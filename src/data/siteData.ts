@@ -114,17 +114,21 @@ export type Advisor = {
   description: string;
   image: string;
   email?: string;
+  phone?: string;
+  website?: string;
 };
 
 export const advisors: Advisor[] = [
   {
     id: "adv1",
-    name: "Prof. Dr. Jamal Uddin Ahamed",
+    name: "Dr. Md. Arafat Rahman",
     title: "Professor",
     department: "Department of Mechanical Engineering, CUET",
-    description: "Prof. Dr. Jamal Uddin Ahamed is a Professor in the Department of Mechanical Engineering and the Pro-Vice-Chancellor of CUET. With extensive expertise in energy, exergy, heat transfer, and HVAC systems, his visionary leadership and academic excellence provide invaluable guidance to the team, driving innovation and technical mastery in our engineering projects.",
-    image: "/jamal.jpg",
-    email: "jamal@cuet.ac.bd"
+    description: "Dr. Md. Arafat Rahman is a Professor of the Department of Mechanical Engineering, Chittagong University of Engineering and Technology (CUET), Bangladesh. He is offering lectures on various courses at the undergraduate and postgraduate levels. His main research interests are in the fields of vehicle dynamics, vibration, material science, and electrochemistry. Dr. Rahman finished his PhD degree from the Faculty of Science, Engineering, and Technology (FSET), Swinburne University of Technology (SUT) in April 2016. He worked on nanoporous materials as electrodes for lithium batteries, especially lithium-ion batteries (LIBs). He developed different types of nanoporous materials, and their performance as anodes of LIBs was evaluated. Till date, several research articles from these investigations have been reported in various journals. Apart from PhD study, he was two-times elected FSET student representative of SUT, helped students reach their voice to university authorities. He also took part in various volunteer work inside and outside of SUT. Dr. Rahman likes to engage with people through academic and research-related posts since ideas and communication start to flow through a collaborative process.",
+    image: "/arafat.jpg",
+    email: "arafat@cuet.ac.bd",
+    phone: "+88 01719 416328",
+    website: "https://orcid.org/0000-0001-7149-7489"
   }
 ];
 

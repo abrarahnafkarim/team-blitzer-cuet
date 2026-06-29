@@ -33,7 +33,7 @@ export const Footer = () => {
       <div className="py-4 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} Team Blitzer CUET. All rights reserved.
         <br />
-        This website is developed by <a href="https://www.linkedin.com/in/abrar-ahnaf-karim-/" target="_blank" rel="noreferrer" className="story-link">Abrar Ahnaf Karim</a>
+        This website is developed by <a href="https://abrarahnafkarim.github.io/Abrar-Ahnaf-Karim/" target="_blank" rel="noreferrer" className="story-link">Abrar Ahnaf Karim</a>
       </div>
     </footer>
   );
